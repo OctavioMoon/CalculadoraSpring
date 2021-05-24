@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mi Calculadora</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" <script
+        src="/js/jquery-3.5.0.min.js">
+    </script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Calculadora simple</h1>
+            <p class="lead">
+                Ejemplo de calculadora usando MVC con spring Salvador Octavio García Luna, Desarrollo Web Avanzado, 24/05/2021
+            </p>
+            <hr class="my-4">
+            <p>Introduce los datos solictados.</p>
+            <div>
+                <form action="#" th:action="@{/resultado}" th:object="${calcu}" method="post">
+                    <p>Primer número: <input type="number" th:field="*{numero1}" class="form-control" /></p>
+                    <p>Segundo número: <input type="number" th:field="*{numero2}" class="form-control" /></p>
+                    <p>
+                        Operacion:
+                        <select th:field="*{operacion}" class="form-control">
+                            <option value="+">Suma (+)</option>
+                            <option value="-">Resta (-)</option>
+                            <option value="*">Multiplicación (X)</option>
+                            <option value="/">Divición (/)</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label th:text="'Resultado de ' + *{numero1} + *{operacion} + *{numero2} + ' = ' + *{resultado}"></label>
+                    <p><input type="submit" value="Calcular" /> <input type="reset" value="Limpiar" /></p>
+                    </p>
+                </form>
+            </div>
+            <hr class="my-4">
+            <div>
+                <div class="row">
+                    <div class="col-2"> </div>
+                    <div class="col-8">
+                        <p>Desarrollo de Aplicaciones Web. Octavio Garcia Luna.</p>
+                        <p>ITSSNP.</p>
+                    </div>
+                    <div class="col-2"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
